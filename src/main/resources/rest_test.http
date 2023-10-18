@@ -1,0 +1,39 @@
+### CREATE A NEW USER
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "firstName": "Renat",
+  "lastName": "Rest",
+  "notes": [
+    {
+      "title": "Title1",
+      "body": "Body1"
+    },
+    {
+      "title": "Title2",
+      "body": "Body2"
+    }
+  ]
+}
+
+### GET USER BY ID (Put ETag header value from response to If-None-Match)
+GET http://localhost:8080/users/1
+
+### GET ALL USERS
+GET http://localhost:8080/users
+
+### DELETE USER BY ID
+DELETE http://localhost:8080/users/1
+
+### CREATE A NEW NOTE
+POST http://localhost:8080/users/1/notes
+Content-Type: application/json
+
+{
+  "title": "Test3",
+  "body": "Test3"
+}
+
+### TEST LINKS
+GET http://localhost:8080/users/1/notes
